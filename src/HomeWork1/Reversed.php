@@ -4,7 +4,7 @@ namespace HomeWork1;
 
 class Reversed
 {
-    public function solution(string $str): string
+    public function reverse($str)
     {
         return strrev($str);
     }

@@ -2,13 +2,22 @@
 
 namespace HomeWork1;
 
+use DeepCopy\f001\B;
+use phpDocumentor\Reflection\Types\Boolean;
+
 class FizzBuzz
 {
-    public function calculator(int $i)
+    public function fb($num)
     {
-        $mod3 = $i % 3;
-        $mod5 = $i % 5;
+        $threeCheck = !($num%3);
+        $fiveCheck = !($num%5);
 
-        return (!$mod3 && !$mod5 ? "FizzBuzz" : (!$mod3 ? "Fizz" : (!$mod5 ? "Buzz" : $i)));
+        if ($threeCheck && $fiveCheck) return 'fizzbuzz';
+
+        if ($threeCheck) return 'fizz';
+
+        if ($fiveCheck) return 'buzz';
+
+        return $num;
     }
 }

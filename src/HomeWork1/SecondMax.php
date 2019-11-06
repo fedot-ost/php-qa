@@ -4,10 +4,18 @@ namespace HomeWork1;
 
 class SecondMax
 {
-    public function calculator(array $arr): ?int
+    public function getSecondMax($arr)
     {
-        $arr = array_unique($arr);
-        rsort($arr);
-        return $arr[1] ?? null;
+        $max = 0;
+        $secondMax = 0;
+
+        foreach ($arr as $elem) {
+            if ($elem > $max) {
+                $secondMax = $max;
+                $max = $elem;
+            }
+        }
+
+        return $secondMax;
     }
 }

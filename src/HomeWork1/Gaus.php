@@ -4,8 +4,7 @@ namespace HomeWork1;
 
 class Gaus
 {
-    public function calculator(int $number): int
-    {
-        return $number * ($number + 1) / 2;
+    public function getSum($num) {
+        return ($num + 1)/2 * $num;
     }
 }

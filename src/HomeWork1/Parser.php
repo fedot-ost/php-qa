@@ -4,25 +4,22 @@ namespace HomeWork1;
 
 class Parser
 {
-    /** @var string */
-    private $text;
-
-    public function __construct($text)
+    public function __construct($str)
     {
-        $this->text = $text;
+        $this->str = $str;
     }
 
     public function getLinks()
     {
-        trim($this->text);
-        preg_match('/href=(\'|")(.*)(\'|")>/', $this->text, $matches);
-        return $matches[2] ?? '';
+        preg_match('/href=\'(.+)\'>/', $this->str, $match);
+
+        return $match[1];
     }
 
     public function getPhones()
     {
-        preg_match('/((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}/', $this->text, $matches);
+        preg_match('/(\+.*\d)\s/', $this->str, $match);
 
-        return trim($matches[0] ?? '');
+        return $match[1];
     }
 }
